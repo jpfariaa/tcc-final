@@ -10,39 +10,30 @@
 				</ul>
 
 				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.titulo.departamento}">Departamentos</span></li>
+					<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.titulo.comparar}">Comparar Preços</span></li>
 					<li class="nav-item"><a class="nav-link"
-						th:href="@{/departamentos/cadastrar}"> <i class="oi oi-plus"></i> 
-						<span th:text="#{sidebar.link.cadastrar}">Cadastrar</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						th:href="@{/departamentos/listar}"> <i class="oi oi-spreadsheet"></i>
-							<span th:text="#{sidebar.link.listar}">Listar </span>
+											th:href="@{/comparadores/comparador}"> <i class="oi oi-plus"></i>
+						<span th:text="#{sidebar.link.comparar}">Comparar</span>
 					</a></li>
 				</ul>
 
 				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.titulo.cargo}">Cargos</span></li>
-					<li class="nav-item"><a class="nav-link" 
-						th:href="@{/cargos/cadastrar}"> <i class="oi oi-plus"></i> 
+					<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.titulo.usuario}">Usuários</span></li>
+					<li class="nav-item"><a class="nav-link"
+											th:href="@{/usuarios/cadastrar}"> <i class="oi oi-plus"></i>
 						<span th:text="#{sidebar.link.cadastrar}">Cadastrar </span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						th:href="@{/cargos/listar}"> <i
-							class="oi oi-spreadsheet"></i> 
-							<span th:text="#{sidebar.link.listar}">Listar </span>
+					<li class="nav-item"><a class="nav-link"
+											th:href="@{/usuarios/listar}"> <i class="oi oi-spreadsheet"></i>
+						<span th:text="#{sidebar.link.listar}">Listar</span>
 					</a></li>
 				</ul>
 
 				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.titulo.funcionario}">Funcionários</span></li>
-					<li class="nav-item"><a class="nav-link" 
-						th:href="@{/funcionarios/cadastrar}"> <i class="oi oi-plus"></i> 
-						<span th:text="#{sidebar.link.cadastrar}">Cadastrar </span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						th:href="@{/funcionarios/listar}"> <i class="oi oi-spreadsheet"></i> 
-						<span th:text="#{sidebar.link.listar}">Listar </span>
+					<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.titulo.wishlist}">Lista de Desejos</span></li>
+					<li class="nav-item"><a class="nav-link"
+											th:href="@{/wishlists/listar}"> <i class="oi oi-spreadsheet"></i>
+						<span th:text="#{sidebar.link.visualizar}">Visualizar</span>
 					</a></li>
 				</ul>
 			</nav>
