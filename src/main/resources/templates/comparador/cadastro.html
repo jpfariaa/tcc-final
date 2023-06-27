@@ -18,14 +18,19 @@
     </nav>
 
     <div class="container" id="cadastro">
-        <form action="/comparar" method="POST">
+
+        <div th:replace="fragments/alert"></div>
+
+        <form id="myForm" th:action="@{/comparador/comparar}" th:object="${wishlist}" method="POST">
             <div class="form-row">
 
 
                 <div class="form-group col-md-6">
                     <label for="motherboard">Placa Mãe</label>
-                    <select id="motherboard" class="form-control" name="motherboard">
+                    <select id="motherboard" class="form-control" th:field="*{placaMae}">
                         <option value="">Selecione a Placa Mãe</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -33,6 +38,8 @@
                     <label for="hd">HD</label>
                     <select id="hd" class="form-control" name="hd">
                         <option value="">Selecione o HD</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -40,6 +47,8 @@
                     <label for="processador">Processador</label>
                     <select id="processador" class="form-control" name="processador">
                         <option value="">Selecione o Processador</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -47,6 +56,8 @@
                     <label for="ssd">SSD</label>
                     <select id="ssd" class="form-control" name="ssd">
                         <option value="">Selecione o SSD</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -54,6 +65,8 @@
                     <label for="gpu">Placa de Vídeo</label>
                     <select id="gpu" class="form-control" name="gpu">
                         <option value="">Selecione a Placa de Vídeo</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -61,6 +74,8 @@
                     <label for="gabinete">Gabinete</label>
                     <select id="gabinete" class="form-control" name="gabinete">
                         <option value="">Selecione o Gabinete</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -68,6 +83,8 @@
                     <label for="ram">Memória RAM</label>
                     <select id="ram" class="form-control" name="ram">
                         <option value="">Selecione a Memória RAM</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -75,6 +92,8 @@
                     <label for="monitor">Monitor</label>
                     <select id="monitor" class="form-control" name="monitor">
                         <option value="">Selecione o Monitor</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -82,6 +101,8 @@
                     <label for="cooler">Cooler</label>
                     <select id="cooler" class="form-control" name="cooler">
                         <option value="">Selecione o Cooler</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
 
@@ -89,13 +110,33 @@
                     <label for="fonte">Fonte</label>
                     <select id="fonte" class="form-control" name="fonte">
                         <option value="">Selecione a Fonte</option>
+                        <option value="1">Teste 1</option>
+                        <option value="2">Teste 2</option>
                     </select>
                 </div>
             </div>
             <input type="hidden" id="id" name="id" value=""/>
-            <button type="submit" class="btn btn-primary btn-sm col-md-12">Comparar</button>
+            <button id="comparar" type="submit" class="btn btn-primary btn-sm col-md-12">Comparar</button>
+            <br><br>
+            <button id="salvar" type="submit" class="btn btn-primary btn-sm col-md-12">Salvar na Lista de Desejos</button>
         </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="application/javascript">
+            $(document).ready(function () {
+                $("#comparar").click(function () {
+                    $("#myForm").attr("action", "/comparar");
+                    $("#myForm").submit();
+                })
+
+                $("#salvar").click(function () {
+                    $("#myForm").attr("action", "/salvar");
+                    $("#myForm").submit();
+                })
+            })
+        </script>
     </div>
 </section>
+
 </body>
 </html>
