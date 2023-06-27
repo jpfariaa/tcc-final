@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<section class="layout-content" layout:fragment="corpo">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="oi oi-caret-right"></i>
+                    <span>Comparar Preços</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="cadastro">
+        <form action="/comparar" method="POST">
+            <div class="form-row">
+
+
+                <div class="form-group col-md-6">
+                    <label for="motherboard">Placa Mãe</label>
+                    <select id="motherboard" class="form-control" name="motherboard">
+                        <option value="">Selecione a Placa Mãe</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="hd">HD</label>
+                    <select id="hd" class="form-control" name="hd">
+                        <option value="">Selecione o HD</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="processador">Processador</label>
+                    <select id="processador" class="form-control" name="processador">
+                        <option value="">Selecione o Processador</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ssd">SSD</label>
+                    <select id="ssd" class="form-control" name="ssd">
+                        <option value="">Selecione o SSD</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="gpu">Placa de Vídeo</label>
+                    <select id="gpu" class="form-control" name="gpu">
+                        <option value="">Selecione a Placa de Vídeo</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="gabinete">Gabinete</label>
+                    <select id="gabinete" class="form-control" name="gabinete">
+                        <option value="">Selecione o Gabinete</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ram">Memória RAM</label>
+                    <select id="ram" class="form-control" name="ram">
+                        <option value="">Selecione a Memória RAM</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="monitor">Monitor</label>
+                    <select id="monitor" class="form-control" name="monitor">
+                        <option value="">Selecione o Monitor</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="cooler">Cooler</label>
+                    <select id="cooler" class="form-control" name="cooler">
+                        <option value="">Selecione o Cooler</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="fonte">Fonte</label>
+                    <select id="fonte" class="form-control" name="fonte">
+                        <option value="">Selecione a Fonte</option>
+                    </select>
+                </div>
+            </div>
+            <input type="hidden" id="id" name="id" value=""/>
+            <button type="submit" class="btn btn-primary btn-sm col-md-12">Comparar</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

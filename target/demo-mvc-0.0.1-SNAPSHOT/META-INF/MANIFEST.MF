@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: jpalm
+Build-Jdk: Amazon Corretto version 1.8.0_372
+Implementation-Title: demo-mvc
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.mballem.curso.boot
+Main-Class: ${start-class}
+
