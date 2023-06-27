@@ -1,1 +1,1 @@
-web: java -jar target/demo-mvc-0.0.1-SNAPSHOT.war
+web: java $JAVA_OPTS -jar target/demo-mvc-0.0.1-SNAPSHOT.war --server.port=$PORT
