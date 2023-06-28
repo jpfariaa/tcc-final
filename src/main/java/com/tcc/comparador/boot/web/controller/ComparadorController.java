@@ -26,6 +26,12 @@ public class ComparadorController {
         return "comparador/cadastro";
     }
 
+    @GetMapping("/resultado")
+    public String resultado(WishList wishlist, Model model) {
+        model.addAttribute("wishlist", wishlist);
+        return "comparador/resultado";
+    }
+
     @PostMapping("/salvar")
     public String salvar(@Valid WishList wishlist, BindingResult result, RedirectAttributes attr) {
         if (result.hasErrors()) {

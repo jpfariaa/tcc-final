@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+<section class="layout-content" layout:fragment="corpo">
+
+  <nav class="navbar navbar-expand-md bg-light">
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <i class="oi oi-caret-right"></i>
+          <span>Comparar Preços</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" id="cadastro">
+    <form action="/" method="POST">
+      <div class="form-row">
+
+      </div>
+      <input type="hidden" id="id" name="id" value=""/>
+      <button type="submit" class="btn btn-primary btn-sm col-md-12">Comparar</button>
+    </form>
+  </div>
+</section>
+</body>
+</html>
