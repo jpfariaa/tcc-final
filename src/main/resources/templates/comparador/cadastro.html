@@ -22,8 +22,10 @@
         <div th:replace="fragments/alert"></div>
 
         <form id="myForm" th:action="@{/comparador/comparar}" th:object="${wishlist}" method="POST">
-            <div class="form-row">
 
+            <div th:replace="fragments/validacao  :: validacao"></div>
+
+            <div class="form-row">
 
                 <div class="form-group col-md-6">
                     <label for="motherboard">Placa Mãe</label>
@@ -116,7 +118,10 @@
                 </div>
             </div>
             <input type="hidden" id="id" name="id" value=""/>
-            <button id="resultado" type="submit" class="btn btn-primary btn-sm col-md-12">Comparar</button>
+<!--            <button id="resultado" type="submit" class="btn btn-primary btn-sm col-md-12">Comparar</button>-->
+            <a class="btn btn-primary btn-sm col-md-12" th:href="@{/comparador/resultado}" role="button">
+                <span>Comparar</span>
+            </a>
             <br><br>
             <button id="salvar" type="submit" class="btn btn-primary btn-sm col-md-12">Salvar na Lista de Desejos</button>
         </form>

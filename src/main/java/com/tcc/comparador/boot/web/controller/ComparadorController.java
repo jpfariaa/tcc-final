@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -19,6 +20,11 @@ public class ComparadorController {
 
     @Autowired
     private WishListService service;
+
+    @ModelAttribute("wishlist")
+    public WishList setupWishListForm() {
+        return new WishList();
+    }
 
     @GetMapping("/cadastrar")
     public String cadastrar(WishList wishlist, Model model) {
@@ -33,13 +39,13 @@ public class ComparadorController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(@Valid WishList wishlist, BindingResult result, RedirectAttributes attr) {
+    public String salvar(@Valid @ModelAttribute("wishlist") WishList wishlist, BindingResult result, RedirectAttributes attr) {
         if (result.hasErrors()) {
-            return "cadastro";
+            return "comparador/cadastro";
         }
 
         service.salvar(wishlist);
         attr.addFlashAttribute("success", "Lista de Desejos salva com sucesso.");
-        return "redirect:/comparador";
+        return "redirect:/comparador/cadastrar";
     }
 }
