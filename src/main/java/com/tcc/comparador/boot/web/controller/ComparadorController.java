@@ -32,8 +32,8 @@ public class ComparadorController {
         return "comparador/cadastro";
     }
 
-    @GetMapping("/resultado")
-    public String resultado(WishList wishlist, Model model) {
+    @PostMapping("/resultado")
+    public String resultado(@ModelAttribute("wishlist") WishList wishlist, Model model) {
         model.addAttribute("wishlist", wishlist);
         return "comparador/resultado";
     }
