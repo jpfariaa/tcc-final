@@ -2,6 +2,19 @@
 <html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
+    <style>
+        .price-red {
+            color: red;
+        }
+
+        .price-green {
+            color: green;
+        }
+
+        .price-yellow {
+            color: yellow;
+        }
+    </style>
 </head>
 <body>
 <section class="layout-content" layout:fragment="corpo">
@@ -22,54 +35,102 @@
             <div class="col-md-6 mb-3">
                 <div class="card p-3">
                     <h2 class="mb-3">Loja 1</h2>
-                    <h5><strong>Placa Mãe: </strong> <span th:text="${wishlist.placaMae}"></span></h5>
-                    <hr>
-                    <h5><strong>HD: </strong> <span th:text="${wishlist.hd}"></span></h5>
-                    <hr>
-                    <h5><strong>Processador: </strong> <span th:text="${wishlist.processador}"></span></h5>
-                    <hr>
-                    <h5><strong>SSD: </strong> <span th:text="${wishlist.ssd}"></span></h5>
-                    <hr>
-                    <h5><strong>GPU: </strong> <span th:text="${wishlist.gpu}"></span></h5>
-                    <hr>
-                    <h5><strong>Gabinete: </strong> <span th:text="${wishlist.gabinete}"></span></h5>
-                    <hr>
-                    <h5><strong>RAM: </strong> <span th:text="${wishlist.ram}"></span></h5>
-                    <hr>
-                    <h5><strong>Monitor: </strong> <span th:text="${wishlist.monitor}"></span></h5>
-                    <hr>
-                    <h5><strong>Cooler: </strong> <span th:text="${wishlist.cooler}"></span></h5>
-                    <hr>
-                    <h5><strong>Fonte: </strong> <span th:text="${wishlist.fonte}"></span></h5>
-                    <p class="mt-3 bg-light p-2"><strong>Total: </strong> <span style="font-size:1.5em; color:red;">R$ 3000,00</span></p>
+                    <div th:if="${!#strings.isEmpty(wishlist.placaMae)}">
+                        <h5><strong>Placa Mãe: </strong> <span th:text="${wishlist.placaMae}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.hd)}">
+                        <h5><strong>HD: </strong> <span th:text="${wishlist.hd}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.processador)}">
+                        <h5><strong>Processador: </strong> <span th:text="${wishlist.processador}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.ssd)}">
+                        <h5><strong>SSD: </strong> <span th:text="${wishlist.ssd}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.gpu)}">
+                        <h5><strong>GPU: </strong> <span th:text="${wishlist.gpu}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.gabinete)}">
+                        <h5><strong>Gabinete: </strong> <span th:text="${wishlist.gabinete}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.ram)}">
+                        <h5><strong>RAM: </strong> <span th:text="${wishlist.ram}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.monitor)}">
+                        <h5><strong>Monitor: </strong> <span th:text="${wishlist.monitor}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.cooler)}">
+                        <h5><strong>Cooler: </strong> <span th:text="${wishlist.cooler}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.fonte)}">
+                        <h5><strong>Fonte: </strong> <span th:text="${wishlist.fonte}"></span></h5>
+                    </div>
+                    <p class="mt-3 bg-light p-2" style="font-size: 1.5em; background-color: #f8f9fa;">
+                        <strong>Total: </strong>
+                        <span th:text="${totalLoja1}" th:classappend="${classeLoja1}" style="font-weight: bold;"></span>
+                    </p>
                 </div>
             </div>
 
             <div class="col-md-6 mb-3">
                 <div class="card p-3">
                     <h2 class="mb-3">Loja 2</h2>
-                    <h5><strong>Placa Mãe: </strong> <span th:text="${wishlist.placaMae}"></span></h5>
-                    <hr>
-                    <h5><strong>HD: </strong> <span th:text="${wishlist.hd}"></span></h5>
-                    <hr>
-                    <h5><strong>Processador: </strong> <span th:text="${wishlist.processador}"></span></h5>
-                    <hr>
-                    <h5><strong>SSD: </strong> <span th:text="${wishlist.ssd}"></span></h5>
-                    <hr>
-                    <h5><strong>GPU: </strong> <span th:text="${wishlist.gpu}"></span></h5>
-                    <hr>
-                    <h5><strong>Gabinete: </strong> <span th:text="${wishlist.gabinete}"></span></h5>
-                    <hr>
-                    <h5><strong>RAM: </strong> <span th:text="${wishlist.ram}"></span></h5>
-                    <hr>
-                    <h5><strong>Monitor: </strong> <span th:text="${wishlist.monitor}"></span></h5>
-                    <hr>
-                    <h5><strong>Cooler: </strong> <span th:text="${wishlist.cooler}"></span></h5>
-                    <hr>
-                    <h5><strong>Fonte: </strong> <span th:text="${wishlist.fonte}"></span></h5>
-                    <p class="mt-3 bg-light p-2"><strong>Total: </strong> <span style="font-size:1.5em; color:green;">R$ 2800,00</span></p>
+                    <div th:if="${!#strings.isEmpty(wishlist.placaMae)}">
+                        <h5><strong>Placa Mãe: </strong> <span th:text="${wishlist.placaMae}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.hd)}">
+                        <h5><strong>HD: </strong> <span th:text="${wishlist.hd}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.processador)}">
+                        <h5><strong>Processador: </strong> <span th:text="${wishlist.processador}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.ssd)}">
+                        <h5><strong>SSD: </strong> <span th:text="${wishlist.ssd}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.gpu)}">
+                        <h5><strong>GPU: </strong> <span th:text="${wishlist.gpu}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.gabinete)}">
+                        <h5><strong>Gabinete: </strong> <span th:text="${wishlist.gabinete}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.ram)}">
+                        <h5><strong>RAM: </strong> <span th:text="${wishlist.ram}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.monitor)}">
+                        <h5><strong>Monitor: </strong> <span th:text="${wishlist.monitor}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.cooler)}">
+                        <h5><strong>Cooler: </strong> <span th:text="${wishlist.cooler}"></span></h5>
+                        <hr>
+                    </div>
+                    <div th:if="${!#strings.isEmpty(wishlist.fonte)}">
+                        <h5><strong>Fonte: </strong> <span th:text="${wishlist.fonte}"></span></h5>
+                    </div>
+                    <p class="mt-3 bg-light p-2" style="font-size: 1.5em; background-color: #f8f9fa;">
+                        <strong>Total: </strong>
+                        <span th:text="${totalLoja2}" th:classappend="${classeLoja2}" style="font-weight: bold;"></span>
+                    </p>
                 </div>
             </div>
+
+
         </div>
         <a class="btn btn-primary btn-sm col-md-12" th:href="@{/comparador/cadastrar}" role="button">
             <span>Comparar novamente</span>

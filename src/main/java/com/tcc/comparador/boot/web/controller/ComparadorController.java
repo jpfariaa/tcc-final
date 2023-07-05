@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.Random;
 
 @Controller
 @RequestMapping("/comparador")
@@ -34,7 +35,28 @@ public class ComparadorController {
 
     @PostMapping("/resultado")
     public String resultado(@ModelAttribute("wishlist") WishList wishlist, Model model) {
+
+        Random rand = new Random();
+        int loja1 = rand.nextInt(3501) + 1500; // Gera um número aleatório entre 1500 e 5000
+        int loja2 = rand.nextInt(3501) + 1500;
+
+        String classeLoja1 = "price-yellow";
+        String classeLoja2 = "price-yellow";
+
+        if(loja1 < loja2){
+            classeLoja1 = "price-green";
+            classeLoja2 = "price-red";
+        }else if(loja1 > loja2){
+            classeLoja1 = "price-red";
+            classeLoja2 = "price-green";
+        }
+
         model.addAttribute("wishlist", wishlist);
+        model.addAttribute("totalLoja1", loja1);
+        model.addAttribute("totalLoja2", loja2);
+        model.addAttribute("classeLoja1", classeLoja1);
+        model.addAttribute("classeLoja2", classeLoja2);
+        
         return "comparador/resultado";
     }
 
