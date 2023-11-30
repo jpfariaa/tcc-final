@@ -54,7 +54,7 @@ public class WishListController {
         return "redirect:/wishlists/cadastrar";
     }
 
-    @PostMapping("/excluir/{id}")
+    @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
         service.excluir(id);
         attr.addFlashAttribute("success", "WishList excluído com sucesso.");
